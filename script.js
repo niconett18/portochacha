@@ -10,8 +10,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Default active tab
-  const firstTab = document.querySelector('.tab-button');
-  if (firstTab) firstTab.click();
+  // Ensure the default active tab is visible even without clicking
+  const activeSection = document.querySelector('.tab-content.active');
+  if (activeSection) {
+    activeSection.style.display = 'block';
+  }
 
   // Simple reveal for elements with .reveal-animation
   const revealElements = document.querySelectorAll('.reveal-animation');

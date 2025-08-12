@@ -152,7 +152,7 @@
         <header class="text-center mb-12 reveal-animation" data-aos="fade-up" data-aos-duration="800">
             <div class="mb-6">
                 <!-- Profile Image - Updated path -->
-                <img src="public/IMG-20240811-WA0005.jpg" alt="Clarissa Dyan Widjaja" class="profile-image mx-auto" onerror="this.onerror=null;this.src='https://placehold.co/200x200/cccccc/333333?text=Clarissa';">
+                <img src="/public/IMG-20240811-WA0005.jpg" alt="Clarissa Dyan Widjaja" class="profile-image mx-auto" onerror="this.onerror=null;this.src='https://placehold.co/200x200/cccccc/333333?text=Clarissa';">
             </div>
             <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-2">Clarissa Dyan Widjaja</h1>
             <p class="text-base md:text-lg text-gray-600 mb-6">Content Creator · Talent · Computer Science Student</p>
@@ -190,11 +190,11 @@
                                 <p class="text-gray-600 truncate group-hover:text-pink-600 transition-colors duration-300">+62 819 3399 5888</p>
                             </div>
                         </div>
-                    </div>
+            </div>
                 </a>
 
                 <!-- Instagram Card -->
-                <a href="https://instagram.com/clrsadyy" target="_blank" class="contact-link-card group">
+                <a href="https://instagram.com/clrsadyy" target="_blank" rel="noopener" class="contact-link-card group">
                     <div class="bg-pink-50 p-6 rounded-2xl border border-pink-100 hover:border-pink-200 transition-all duration-300 hover:shadow-lg">
                         <div class="flex items-center space-x-4">
                             <div class="flex-shrink-0">
@@ -211,7 +211,7 @@
                 </a>
 
                 <!-- TikTok Card -->
-                <a href="https://www.tiktok.com/@katseuu" target="_blank" class="contact-link-card group">
+                <a href="https://www.tiktok.com/@katseuu" target="_blank" rel="noopener" class="contact-link-card group">
                     <div class="bg-pink-50 p-6 rounded-2xl border border-pink-100 hover:border-pink-200 transition-all duration-300 hover:shadow-lg">
                         <div class="flex items-center space-x-4">
                             <div class="flex-shrink-0">
@@ -228,7 +228,7 @@
                 </a>
 
                 <!-- CV Download Card -->
-                <a href="public/CV CACA.pdf" target="_blank" class="contact-link-card group">
+                <a href="/public/CV%20CACA.pdf" target="_blank" rel="noopener" class="contact-link-card group">
                     <div class="bg-pink-50 p-6 rounded-2xl border border-pink-100 hover:border-pink-200 transition-all duration-300 hover:shadow-lg">
                         <div class="flex items-center space-x-4">
                             <div class="flex-shrink-0">
@@ -249,13 +249,13 @@
         <!-- Tabs Navigation -->
         <nav class="flex flex-wrap justify-center mb-10 border-b border-gray-200" data-aos="fade-up" data-aos-delay="200">
             <div class="flex flex-wrap justify-center gap-2">
-                <button class="tab-button active" onclick="openTab(event, 'about')">
+                <button class="tab-button active" type="button" onclick="openTab(event, 'about')">
                     Tentang Saya
                 </button>
-                <button class="tab-button" onclick="openTab(event, 'resume')">
+                <button class="tab-button" type="button" onclick="openTab(event, 'resume')">
                     Resume
                 </button>
-                <button class="tab-button" onclick="openTab(event, 'portfolio')">
+                <button class="tab-button" type="button" onclick="openTab(event, 'portfolio')">
                     Portofolio
                 </button>
             </div>
@@ -294,7 +294,7 @@
                                 </div>
                                 <div class="aspect-square rounded-2xl bg-gradient-to-br from-pink-50 to-white shadow-lg hover:shadow-xl transition-all duration-300 p-4 flex items-center justify-center group hover:-translate-y-1" title="HTML5">
                                     <img alt="HTML5" loading="lazy" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"/>
-                                </div>
+                            </div>
                                 <div class="aspect-square rounded-2xl bg-gradient-to-br from-pink-50 to-white shadow-lg hover:shadow-xl transition-all duration-300 p-4 flex items-center justify-center group hover:-translate-y-1" title="CSS3">
                                     <img alt="CSS3" loading="lazy" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"/>
                                 </div>
@@ -303,9 +303,9 @@
                                 </div>
                                 <div class="aspect-square rounded-2xl bg-gradient-to-br from-pink-50 to-white shadow-lg hover:shadow-xl transition-all duration-300 p-4 flex items-center justify-center group hover:-translate-y-1" title="Java">
                                     <img alt="Java" loading="lazy" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"/>
-                                </div>
                             </div>
                         </div>
+                    </div>
 
                     <!-- Tools & Soft Skills -->
                         <div class="glass-card p-6" data-aos="fade-left" data-aos-delay="200">
@@ -380,10 +380,10 @@
                         <h3 class="text-2xl font-bold section-title mb-6">Curriculum Vitae</h3>
                         <div class="glass-card p-4" data-aos="zoom-in" data-aos-delay="300">
                             <div class="pdf-embed-container rounded-lg overflow-hidden">
-                                <iframe src="public/CV CACA.pdf" title="Clarissa Dyan Widjaja CV"></iframe>
+                                <iframe src="/public/CV%20CACA.pdf" title="Clarissa Dyan Widjaja CV"></iframe>
                 </div>
                 <div class="mt-6 text-center">
-                                <a href="public/CV CACA.pdf" target="_blank" class="llm-button">
+                                <a href="/public/CV%20CACA.pdf" target="_blank" rel="noopener" class="llm-button">
                         <i class="fas fa-download"></i> Unduh CV (PDF)
                     </a>
                             </div>
