@@ -27,12 +27,62 @@
             border-radius: 50%;
             border: 2px solid #e5e7eb;
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: float 6s ease-in-out infinite;
         }
         .profile-image:hover {
-            transform: scale(1.02);
-            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: 0 20px 40px rgba(249, 168, 212, 0.3);
         }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        .animate-fade-in-up { animation: fadeInUp 0.8s ease-out; }
+        .animate-slide-in-left { animation: slideInLeft 0.8s ease-out; }
+        .animate-slide-in-right { animation: slideInRight 0.8s ease-out; }
+        .animate-pulse-slow { animation: pulse 3s ease-in-out infinite; }
         .section-title {
             color: #111827;
             font-weight: 700;
@@ -150,18 +200,18 @@
     <div class="container mx-auto px-4 py-12">
         <!-- Header Section -->
         <header class="text-center mb-12 reveal-animation" data-aos="fade-up" data-aos-duration="800">
-            <div class="mb-6">
+            <div class="mb-6 animate-float">
                 <!-- Profile Image - Updated path -->
-                <img src="public/IMG-20240811-WA0005.jpg" alt="Clarissa Dyan Widjaja" class="profile-image mx-auto" onerror="this.onerror=null;this.src='https://placehold.co/200x200/cccccc/333333?text=Clarissa';">
+                <img src="public/IMG-20240811-WA0005.jpg" alt="Clarissa Dyan Widjaja" class="profile-image mx-auto hover:scale-110 hover:rotate-3 transition-all duration-300 ease-out" onerror="this.onerror=null;this.src='https://placehold.co/200x200/cccccc/333333?text=Clarissa';">
             </div>
-            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-2">Clarissa Dyan Widjaja</h1>
-            <p class="text-base md:text-lg text-gray-600 mb-6">Content Creator · Talent · Computer Science Student</p>
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-2 animate-fade-in-up">Clarissa Dyan Widjaja</h1>
+            <p class="text-base md:text-lg text-gray-600 mb-6 animate-fade-in-up" style="animation-delay: 0.2s;">Content Creator · Talent · Computer Science Student</p>
             
             <!-- Contact Info Cards -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto mt-8">
                 <!-- Email Card -->
-                <a href="mailto:clrs.dyaan@gmail.com" class="contact-link-card group">
-                    <div class="bg-pink-50 p-6 rounded-2xl border border-pink-100 hover:border-pink-200 transition-all duration-300 hover:shadow-lg">
+                <a href="mailto:clrs.dyaan@gmail.com" class="contact-link-card group animate-slide-in-left" style="animation-delay: 0.1s;">
+                    <div class="bg-pink-50 p-6 rounded-2xl border border-pink-100 hover:border-pink-200 transition-all duration-300 hover:shadow-lg hover:scale-105 hover:-translate-y-1">
                         <div class="flex items-center space-x-4">
                             <div class="flex-shrink-0">
                                 <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm group-hover:shadow-md transition-all duration-300">
@@ -177,8 +227,8 @@
                 </a>
 
                 <!-- Phone Card -->
-                <a href="tel:+6281933995888" class="contact-link-card group">
-                    <div class="bg-pink-50 p-6 rounded-2xl border border-pink-100 hover:border-pink-200 transition-all duration-300 hover:shadow-lg">
+                <a href="tel:+6281933995888" class="contact-link-card group animate-slide-in-left" style="animation-delay: 0.2s;">
+                    <div class="bg-pink-50 p-6 rounded-2xl border border-pink-100 hover:border-pink-200 transition-all duration-300 hover:shadow-lg hover:scale-105 hover:-translate-y-1">
                         <div class="flex items-center space-x-4">
                             <div class="flex-shrink-0">
                                 <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm group-hover:shadow-md transition-all duration-300">
@@ -194,8 +244,8 @@
                 </a>
 
                 <!-- Instagram Card -->
-                <a href="https://instagram.com/clrsadyy" target="_blank" rel="noopener" class="contact-link-card group">
-                    <div class="bg-pink-50 p-6 rounded-2xl border border-pink-100 hover:border-pink-200 transition-all duration-300 hover:shadow-lg">
+                <a href="https://instagram.com/clrsadyy" target="_blank" rel="noopener" class="contact-link-card group animate-slide-in-left" style="animation-delay: 0.3s;">
+                    <div class="bg-pink-50 p-6 rounded-2xl border border-pink-100 hover:border-pink-200 transition-all duration-300 hover:shadow-lg hover:scale-105 hover:-translate-y-1">
                         <div class="flex items-center space-x-4">
                             <div class="flex-shrink-0">
                                 <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm group-hover:shadow-md transition-all duration-300">
@@ -211,8 +261,8 @@
                 </a>
 
                 <!-- TikTok Card -->
-                <a href="https://www.tiktok.com/@katseuu" target="_blank" rel="noopener" class="contact-link-card group">
-                    <div class="bg-pink-50 p-6 rounded-2xl border border-pink-100 hover:border-pink-200 transition-all duration-300 hover:shadow-lg">
+                <a href="https://www.tiktok.com/@katseuu" target="_blank" rel="noopener" class="contact-link-card group animate-slide-in-right" style="animation-delay: 0.1s;">
+                    <div class="bg-pink-50 p-6 rounded-2xl border border-pink-100 hover:border-pink-200 transition-all duration-300 hover:shadow-lg hover:scale-105 hover:-translate-y-1">
                         <div class="flex items-center space-x-4">
                             <div class="flex-shrink-0">
                                 <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm group-hover:shadow-md transition-all duration-300">
@@ -228,8 +278,8 @@
                 </a>
 
                 <!-- CV Download Card -->
-                <a href="public/CV%20CACA.pdf" target="_blank" rel="noopener" class="contact-link-card group">
-                    <div class="bg-pink-50 p-6 rounded-2xl border border-pink-100 hover:border-pink-200 transition-all duration-300 hover:shadow-lg">
+                <a href="public/CV%20CACA.pdf" target="_blank" rel="noopener" class="contact-link-card group animate-slide-in-right" style="animation-delay: 0.2s;">
+                    <div class="bg-pink-50 p-6 rounded-2xl border border-pink-100 hover:border-pink-200 transition-all duration-300 hover:shadow-lg hover:scale-105 hover:-translate-y-1">
                         <div class="flex items-center space-x-4">
                             <div class="flex-shrink-0">
                                 <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm group-hover:shadow-md transition-all duration-300">
@@ -249,13 +299,13 @@
         <!-- Tabs Navigation -->
         <nav class="flex flex-wrap justify-center mb-10 border-b border-gray-200" data-aos="fade-up" data-aos-delay="200">
             <div class="flex flex-wrap justify-center gap-2">
-                <button class="tab-button active" type="button" onclick="openTab(event, 'about')">
+                <button class="tab-button active hover:scale-105 transition-transform duration-200" type="button" onclick="openTab(event, 'about')">
                     Tentang Saya
                 </button>
-                <button class="tab-button" type="button" onclick="openTab(event, 'resume')">
+                <button class="tab-button hover:scale-105 transition-transform duration-200" type="button" onclick="openTab(event, 'resume')">
                     Resume
                 </button>
-                <button class="tab-button" type="button" onclick="openTab(event, 'portfolio')">
+                <button class="tab-button hover:scale-105 transition-transform duration-200" type="button" onclick="openTab(event, 'portfolio')">
                     Portofolio
                 </button>
             </div>
@@ -264,7 +314,7 @@
         <!-- Tab Content Sections -->
         <main>
             <!-- About Me Section (Combined with Skills) -->
-            <section id="about" class="tab-content active mb-12" data-aos="fade-up" data-aos-delay="300">
+            <section id="about" class="tab-content active mb-12 transition-all duration-500 ease-in-out transform opacity-100 translate-y-0" data-aos="fade-up" data-aos-delay="300">
                 <div class="glass-card p-8">
                     <h2 class="text-3xl font-bold section-title mb-6">Tentang Saya</h2>
                     <div>
@@ -279,80 +329,81 @@
                         </p>
                     </div>
 
-                <!-- My Skills Section with Progress Bars -->
-                    <h3 class="text-2xl font-bold section-title mb-6">Keahlian</h3>
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <!-- Programming Languages -->
-                                                <div class="glass-card p-8" data-aos="fade-right" data-aos-delay="200">
-                            <h4 class="text-xl font-semibold text-gray-900 mb-6">Bahasa Pemrograman</h4>
-                            <div class="grid grid-cols-3 md:grid-cols-6 gap-6">
-                                <div class="aspect-square rounded-2xl bg-gradient-to-br from-pink-50 to-white shadow-lg hover:shadow-xl transition-all duration-300 p-4 flex items-center justify-center group hover:-translate-y-1" title="Python">
-                                    <img alt="Python" loading="lazy" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"/>
+                    <div class="mt-12">
+                        <!-- My Skills Section with Progress Bars -->
+                        <h3 class="text-2xl font-bold section-title mb-6">Keahlian</h3>
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <!-- Programming Languages -->
+                                                        <div class="glass-card p-8" data-aos="fade-right" data-aos-delay="200">
+                                <h4 class="text-xl font-semibold text-gray-900 mb-6">Bahasa Pemrograman</h4>
+                                <div class="grid grid-cols-3 md:grid-cols-6 gap-6">
+                                    <div class="aspect-square rounded-2xl bg-gradient-to-br from-pink-50 to-white shadow-lg hover:shadow-xl transition-all duration-300 p-4 flex items-center justify-center group hover:-translate-y-1 hover:rotate-3" title="Python">
+                                        <img alt="Python" loading="lazy" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"/>
+                                    </div>
+                                    <div class="aspect-square rounded-2xl bg-gradient-to-br from-pink-50 to-white shadow-lg hover:shadow-xl transition-all duration-300 p-4 flex items-center justify-center group hover:-translate-y-1 hover:rotate-3" title="JavaScript">
+                                        <img alt="JavaScript" loading="lazy" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"/>
+                                    </div>
+                                    <div class="aspect-square rounded-2xl bg-gradient-to-br from-pink-50 to-white shadow-lg hover:shadow-xl transition-all duration-300 p-4 flex items-center justify-center group hover:-translate-y-1 hover:rotate-3" title="HTML5">
+                                        <img alt="HTML5" loading="lazy" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"/>
                                 </div>
-                                <div class="aspect-square rounded-2xl bg-gradient-to-br from-pink-50 to-white shadow-lg hover:shadow-xl transition-all duration-300 p-4 flex items-center justify-center group hover:-translate-y-1" title="JavaScript">
-                                    <img alt="JavaScript" loading="lazy" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"/>
+                                    <div class="aspect-square rounded-2xl bg-gradient-to-br from-pink-50 to-white shadow-lg hover:shadow-xl transition-all duration-300 p-4 flex items-center justify-center group hover:-translate-y-1 hover:rotate-3" title="CSS3">
+                                        <img alt="CSS3" loading="lazy" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"/>
+                                    </div>
+                                    <div class="aspect-square rounded-2xl bg-gradient-to-br from-pink-50 to-white shadow-lg hover:shadow-xl transition-all duration-300 p-4 flex items-center justify-center group hover:-translate-y-1 hover:rotate-3" title="C++">
+                                        <img alt="C++" loading="lazy" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"/>
+                                    </div>
+                                    <div class="aspect-square rounded-2xl bg-gradient-to-br from-pink-50 to-white shadow-lg hover:shadow-xl transition-all duration-300 p-4 flex items-center justify-center group hover:-translate-y-1 hover:rotate-3" title="Java">
+                                        <img alt="Java" loading="lazy" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"/>
                                 </div>
-                                <div class="aspect-square rounded-2xl bg-gradient-to-br from-pink-50 to-white shadow-lg hover:shadow-xl transition-all duration-300 p-4 flex items-center justify-center group hover:-translate-y-1" title="HTML5">
-                                    <img alt="HTML5" loading="lazy" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"/>
-                            </div>
-                                <div class="aspect-square rounded-2xl bg-gradient-to-br from-pink-50 to-white shadow-lg hover:shadow-xl transition-all duration-300 p-4 flex items-center justify-center group hover:-translate-y-1" title="CSS3">
-                                    <img alt="CSS3" loading="lazy" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"/>
-                                </div>
-                                <div class="aspect-square rounded-2xl bg-gradient-to-br from-pink-50 to-white shadow-lg hover:shadow-xl transition-all duration-300 p-4 flex items-center justify-center group hover:-translate-y-1" title="C++">
-                                    <img alt="C++" loading="lazy" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"/>
-                                </div>
-                                <div class="aspect-square rounded-2xl bg-gradient-to-br from-pink-50 to-white shadow-lg hover:shadow-xl transition-all duration-300 p-4 flex items-center justify-center group hover:-translate-y-1" title="Java">
-                                    <img alt="Java" loading="lazy" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"/>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Tools & Soft Skills -->
-                        <div class="glass-card p-6" data-aos="fade-left" data-aos-delay="200">
-                            <h4 class="text-xl font-semibold text-gray-900 mb-4">Tools & Skills</h4>
-                            <div class="flex flex-wrap gap-2 mb-6">
-                                <span class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm">Figma</span>
-                                <span class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm">Canva</span>
-                                <span class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm">VS Code</span>
-                                <span class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm">Git</span>
-                                <span class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm">CapCut</span>
+                        <!-- Tools & Soft Skills -->
+                            <div class="glass-card p-6" data-aos="fade-left" data-aos-delay="200">
+                                <h4 class="text-xl font-semibold text-gray-900 mb-4">Tools & Skills</h4>
+                                <div class="flex flex-wrap gap-2 mb-6">
+                                    <span class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm hover:bg-gray-200 hover:scale-105 transition-all duration-200 cursor-default">Figma</span>
+                                    <span class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm hover:bg-gray-200 hover:scale-105 transition-all duration-200 cursor-default">Canva</span>
+                                    <span class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm hover:bg-gray-200 hover:scale-105 transition-all duration-200 cursor-default">VS Code</span>
+                                    <span class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm hover:bg-gray-200 hover:scale-105 transition-all duration-200 cursor-default">Git</span>
+                                    <span class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm hover:bg-gray-200 hover:scale-105 transition-all duration-200 cursor-default">CapCut</span>
+                                    </div>
+                                
+                                <div class="mt-6" data-aos="fade-up" data-aos-delay="300">
+                                    <h5 class="text-lg font-semibold text-gray-900 mb-3">Soft Skills</h5>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="px-3 py-1 bg-pink-50 text-pink-900 rounded-full text-sm ring-1 ring-pink-200 hover:bg-pink-100 hover:scale-105 hover:ring-pink-300 transition-all duration-200 cursor-default">Komunikasi</span>
+                                        <span class="px-3 py-1 bg-pink-50 text-pink-900 rounded-full text-sm ring-1 ring-pink-200 hover:bg-pink-100 hover:scale-105 hover:ring-pink-300 transition-all duration-200 cursor-default">Manajemen Waktu</span>
+                                        <span class="px-3 py-1 bg-pink-50 text-pink-900 rounded-full text-sm ring-1 ring-pink-200 hover:bg-pink-100 hover:scale-105 hover:ring-pink-300 transition-all duration-200 cursor-default">Kerja Tim</span>
+                                        <span class="px-3 py-1 bg-pink-50 text-pink-900 rounded-full text-sm ring-1 ring-pink-200 hover:bg-pink-100 hover:scale-105 hover:ring-pink-300 transition-all duration-200 cursor-default">Kepemimpinan</span>
+                                        <span class="px-3 py-1 bg-pink-50 text-pink-900 rounded-full text-sm ring-1 ring-pink-200 hover:bg-pink-100 hover:scale-105 hover:ring-pink-300 transition-all duration-200 cursor-default">Adaptabilitas</span>
+                                    </div>
                                 </div>
-                            
-                            <div class="mt-6" data-aos="fade-up" data-aos-delay="300">
-                                <h5 class="text-lg font-semibold text-gray-900 mb-3">Soft Skills</h5>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="px-3 py-1 bg-pink-50 text-pink-900 rounded-full text-sm ring-1 ring-pink-200">Komunikasi</span>
-                                    <span class="px-3 py-1 bg-pink-50 text-pink-900 rounded-full text-sm ring-1 ring-pink-200">Manajemen Waktu</span>
-                                    <span class="px-3 py-1 bg-pink-50 text-pink-900 rounded-full text-sm ring-1 ring-pink-200">Kerja Tim</span>
-                                    <span class="px-3 py-1 bg-pink-50 text-pink-900 rounded-full text-sm ring-1 ring-pink-200">Kepemimpinan</span>
-                                    <span class="px-3 py-1 bg-pink-50 text-pink-900 rounded-full text-sm ring-1 ring-pink-200">Adaptabilitas</span>
+                                
+                                <div class="mt-6" data-aos="fade-up" data-aos-delay="300">
+                                    <h5 class="text-lg font-semibold text-gray-900 mb-3">Bahasa</h5>
+                                    <div class="space-y-3">
+                                        <div class="flex items-center justify-between p-3 bg-white rounded-lg border border-gray-200 hover:bg-gray-50 hover:shadow-md transition-all duration-200">
+                                            <span class="font-medium">🇮🇩 Bahasa Indonesia</span>
+                                            <span class="text-sm bg-gray-100 text-gray-800 px-3 py-1 rounded-full font-semibold">Native</span>
+                                    </div>
+                                        <div class="flex items-center justify-between p-3 bg-white rounded-lg border border-gray-200 hover:bg-gray-50 hover:shadow-md transition-all duration-200">
+                                            <span class="font-medium">🇺🇸 English</span>
+                                            <span class="text-sm bg-gray-100 text-gray-800 px-3 py-1 rounded-full font-semibold">Professional</span>
+                                    </div>
+                                        <div class="flex items-center justify-between p-3 bg-white rounded-lg border border-gray-200 hover:bg-gray-50 hover:shadow-md transition-all duration-200">
+                                            <span class="font-medium">🇨🇳 Mandarin</span>
+                                            <span class="text-sm bg-gray-100 text-gray-800 px-3 py-1 rounded-full font-semibold">Professional</span>
+                                    </div>
                                 </div>
-                            </div>
-                            
-                            <div class="mt-6" data-aos="fade-up" data-aos-delay="300">
-                                <h5 class="text-lg font-semibold text-gray-900 mb-3">Bahasa</h5>
-                                <div class="space-y-3">
-                                    <div class="flex items-center justify-between p-3 bg-white rounded-lg border border-gray-200">
-                                        <span class="font-medium">🇮🇩 Bahasa Indonesia</span>
-                                        <span class="text-sm bg-gray-100 text-gray-800 px-3 py-1 rounded-full font-semibold">Native</span>
+                                    </div>
                                 </div>
-                                    <div class="flex items-center justify-between p-3 bg-white rounded-lg border border-gray-200">
-                                        <span class="font-medium">🇺🇸 English</span>
-                                        <span class="text-sm bg-gray-100 text-gray-800 px-3 py-1 rounded-full font-semibold">Professional</span>
-                                </div>
-                                    <div class="flex items-center justify-between p-3 bg-white rounded-lg border border-gray-200">
-                                        <span class="font-medium">🇨🇳 Mandarin</span>
-                                        <span class="text-sm bg-gray-100 text-gray-800 px-3 py-1 rounded-full font-semibold">Professional</span>
-                                </div>
-                            </div>
-                                </div>
-                            </div>
-                    </div>
+                        </div>
                 </div>
             </section>
 
             <!-- Resume Tab Section (Education and CV only) -->
-            <section id="resume" class="tab-content mb-12" data-aos="fade-up" data-aos-delay="300">
+            <section id="resume" class="tab-content mb-12 transition-all duration-500 ease-in-out transform opacity-0 translate-y-4" data-aos="fade-up" data-aos-delay="300">
                 <div class="glass-card p-8">
                     <h2 class="text-3xl font-bold section-title mb-6">Resume</h2>
 
@@ -393,42 +444,42 @@
             </section>
 
             <!-- Portfolio Section -->
-            <section id="portfolio" class="tab-content mb-12" data-aos="fade-up" data-aos-delay="300">
+            <section id="portfolio" class="tab-content mb-12 transition-all duration-500 ease-in-out transform opacity-0 translate-y-4" data-aos="fade-up" data-aos-delay="300">
                 <div class="glass-card p-8">
                     <h2 class="text-3xl font-bold section-title mb-6">Portofolio</h2>
                     <h3 class="text-2xl font-semibold text-gray-900 mb-4">Video Talent & Konten</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <div class="project-card p-6" data-aos="fade-up" data-aos-delay="200">
-                            <div class="video-embed mb-6 rounded-xl overflow-hidden">
+                        <div class="project-card p-6 hover:scale-105 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                            <div class="video-embed mb-6 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300">
                             <iframe src="https://www.youtube.com/embed/Z_3trosyKtM" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                             <h3 class="text-lg font-semibold text-gray-900 mb-2">Video Promosi Produk</h3>
                         <p class="text-gray-600 text-sm">Contoh video promosi produk yang saya bintangi.</p>
                     </div>
-                        <div class="project-card p-6" data-aos="fade-up" data-aos-delay="250">
-                            <div class="video-embed mb-6 rounded-xl overflow-hidden">
+                        <div class="project-card p-6 hover:scale-105 transition-all duration-300" data-aos="fade-up" data-aos-delay="250">
+                            <div class="video-embed mb-6 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300">
                             <iframe src="https://www.youtube.com/embed/jVNgY903PEc" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                             <h3 class="text-lg font-semibold text-gray-900 mb-2">Video Edukasi Singkat</h3>
                         <p class="text-gray-600 text-sm">Video edukasi singkat yang saya buat dan bintangi.</p>
                     </div>
-                        <div class="project-card p-6" data-aos="fade-up" data-aos-delay="300">
-                            <div class="video-embed mb-6 rounded-xl overflow-hidden">
+                        <div class="project-card p-6 hover:scale-105 transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                            <div class="video-embed mb-6 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300">
                             <iframe src="https://www.youtube.com/embed/g2vIIWNPw7c" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                             <h3 class="text-lg font-semibold text-gray-900 mb-2">Konten Kreatif Lainnya</h3>
                         <p class="text-gray-600 text-sm">Contoh lain dari konten video kreatif.</p>
                     </div>
-                        <div class="project-card p-6" data-aos="fade-up" data-aos-delay="350">
-                            <div class="video-embed mb-6 rounded-xl overflow-hidden">
+                        <div class="project-card p-6 hover:scale-105 transition-all duration-300" data-aos="fade-up" data-aos-delay="350">
+                            <div class="video-embed mb-6 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300">
                             <iframe src="https://www.youtube.com/embed/AjT4Ptf9k7k" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                             <h3 class="text-lg font-semibold text-gray-900 mb-2">Video Informasi</h3>
                         <p class="text-gray-600 text-sm">Video singkat yang memberikan informasi.</p>
                     </div>
-                        <div class="project-card p-6" data-aos="fade-up" data-aos-delay="400">
-                            <div class="video-embed mb-6 rounded-xl overflow-hidden">
-                                <a href="https://www.instagram.com/reel/DJ_Cb-JSYiY/?igsh=MXh1a21kNmk2dHNpcw==" target="_blank" class="block w-full h-48 bg-gray-100 border border-gray-200 flex items-center justify-center rounded-xl hover:bg-gray-200 transition-colors">
+                        <div class="project-card p-6 hover:scale-105 transition-all duration-300" data-aos="fade-up" data-aos-delay="400">
+                            <div class="video-embed mb-6 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300">
+                                <a href="https://www.instagram.com/reel/DJ_Cb-JSYiY/?igsh=MXh1a21kNmk2dHNpcw==" target="_blank" class="block w-full h-48 bg-gray-100 border border-gray-200 flex items-center justify-center rounded-xl hover:bg-gray-200 hover:scale-105 transition-all duration-300">
                                     <div class="text-center text-gray-700">
                                         <i class="fab fa-instagram text-4xl mb-2"></i>
                                         <p class="text-sm font-medium">Lihat Reel Instagram</p>
@@ -448,13 +499,13 @@
             <div class="mx-auto max-w-2xl">
                 <p class="text-gray-600 mb-4">Terima kasih telah mengunjungi portfolio saya.</p>
                 <div class="flex justify-center space-x-6 mb-4">
-                    <a href="mailto:clrs.dyaan@gmail.com" class="icon-link text-2xl text-purple-500 hover:text-purple-700">
+                    <a href="mailto:clrs.dyaan@gmail.com" class="icon-link text-2xl text-purple-500 hover:text-purple-700 hover:scale-125 transition-transform duration-300">
                         <i class="fas fa-envelope"></i>
                     </a>
-                    <a href="https://instagram.com/clrsadyy" target="_blank" class="icon-link text-2xl text-pink-500 hover:text-pink-700">
+                    <a href="https://instagram.com/clrsadyy" target="_blank" class="icon-link text-2xl text-pink-500 hover:text-pink-700 hover:scale-125 transition-transform duration-300">
                         <i class="fab fa-instagram"></i>
                     </a>
-                    <a href="https://www.tiktok.com/@katseuu" target="_blank" class="icon-link text-2xl text-blue-500 hover:text-blue-700">
+                    <a href="https://www.tiktok.com/@katseuu" target="_blank" class="icon-link text-2xl text-blue-500 hover:text-blue-700 hover:scale-125 transition-transform duration-300">
                         <i class="fab fa-tiktok"></i>
                     </a>
                 </div>
@@ -473,9 +524,20 @@
         if (typeof window.openTab !== 'function') {
           window.openTab = function(evt, tabName) {
             var i, tabcontent, tablinks;
+            var currentActive = document.querySelector('.tab-content.active');
+            
+            // Fade out current active tab
+            if (currentActive) {
+              currentActive.classList.remove('opacity-100', 'translate-y-0');
+              currentActive.classList.add('opacity-0', 'translate-y-4');
+              setTimeout(function() {
+                currentActive.style.display = 'none';
+                currentActive.classList.remove('active');
+              }, 300);
+            }
+            
             tabcontent = document.getElementsByClassName('tab-content');
             for (i = 0; i < tabcontent.length; i++) {
-              tabcontent[i].style.display = 'none';
               tabcontent[i].classList.remove('active');
             }
             tablinks = document.getElementsByClassName('tab-button');
@@ -483,7 +545,15 @@
               tablinks[i].className = tablinks[i].className.replace(' active', '');
             }
             var target = document.getElementById(tabName);
-            if (target) { target.style.display = 'block'; target.classList.add('active'); }
+            if (target) { 
+              setTimeout(function() {
+                target.style.display = 'block';
+                target.classList.add('active');
+                target.offsetHeight; // Force reflow
+                target.classList.remove('opacity-0', 'translate-y-4');
+                target.classList.add('opacity-100', 'translate-y-0');
+              }, 300);
+            }
             if (evt && evt.currentTarget) { evt.currentTarget.className += ' active'; }
           };
         }
